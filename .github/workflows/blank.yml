@@ -31,10 +31,12 @@ jobs:
         run: echo API_KEY=\"$API_KEY\" > local.properties
       - name: Grant Permission to Execute
         run: chmod +x gradlew
+      - name: Run unit test case
+        run: ./gradlew :app:testDebugUnitTest --tests "dev.george.unittestingdemo.RegistrationUtilTest"
       - name: Build debug APK
         run: bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK to Github Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: app
-          path: presentation/build/outputs/apk/debug/presentation-debug.apk
+          path: ./build/*
