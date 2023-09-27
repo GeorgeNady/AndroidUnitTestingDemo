@@ -5,6 +5,7 @@ object RegistrationUtil {
     private const val TAG = "RegistrationUtil"
     private val fakeInternalRepo = listOf("George", "Joseph")
 
+
     /**
      * the input is not valid if...
      * ...the user/password is empty
